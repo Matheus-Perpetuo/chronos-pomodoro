@@ -4,23 +4,7 @@ import type { TaskStateModel } from './models/TaskStateModel';
 
 import './styles/global.css';
 import './styles/theme.css';
-
-// import type { TaskModel } from "./TaskModel";
-
-// // Estado -> Componente -> Filhos
-
-// export type TaskStateModel = {
-//     tasks: TaskModel []; //historico, MainForm
-//     secondsRemaining: number; // Home, CountDown, Historico, MainForm, Button
-//     formattedSecondsRemaining :string; // Título, CountDown
-//     activeTask: TaskModel | null; // CountDown, Historico, MainForm, Button 
-//     currentCycle: number; // 1 a 8, Home
-//     config: {
-//         worktime: number; // MainForm
-//         shortBreakTime: number; // MainForm
-//         longBreakTime: number; // MainForm
-//     };
-// };
+import { TaskContextProvider } from './contexts/TaskContext';
 
 const initialState: TaskStateModel = {
     tasks: [],
@@ -38,7 +22,11 @@ const initialState: TaskStateModel = {
 export function App () {
     const [state, setState] = useState(initialState);
     
-    return <Home state={state} setState={setState} />;
+    return( 
+    <TaskContextProvider>
+        <Home />;
+    </TaskContextProvider>
+    )
 }
 
 
