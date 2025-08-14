@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { initialTasksState } from "./inititalTaskState";
 import { TaskContext } from "./TaskContext";
 
@@ -8,6 +8,10 @@ import { TaskContext } from "./TaskContext";
 
  export function TaskContextProvider({children}: TaskContextProviderProps) {
     const [state, setState] = useState(initialTasksState);
+
+   useEffect(()=>{
+      console.log(state);
+   },[state])
 
    return <TaskContext.Provider value={{ state, setState }}>
         {children}
