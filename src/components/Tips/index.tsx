@@ -6,6 +6,7 @@ export function Tips() {
     const { state } = useTaskContext();
     const nextCycle = getNextCycle(state.currentCycle);
     const nextCycleType = getNextCycleType(nextCycle)
+    
     // Tips
     const tipsForWhenActiveTask = {
         workTime: <span>Foque por <b>{state.config.workTime}min</b> </span>,
@@ -18,6 +19,7 @@ export function Tips() {
         shortBreakTime: <span>Próximo descanso é de <b>{state.config.shortBreakTime}min </b> </span>,
         longBreakTime: <span>Próximo descanso será longo </span>
     };
+
     return (
         <>
         {!!state.activeTask && tipsForWhenActiveTask[state.activeTask.type]}
