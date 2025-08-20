@@ -14,6 +14,6 @@ import { TaskContext } from "./TaskContext";
    },[state])
 
    return <TaskContext.Provider value={{ state, setState }}>
-        {children}
+      {children}
     </TaskContext.Provider> 
  }
