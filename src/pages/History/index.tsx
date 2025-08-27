@@ -9,11 +9,13 @@ import { formatDate } from "../../utils/formatDate";
 import { getTaskStatus } from "../../utils/getTaskStatus";
 import { sortTasks, type SortTasksOptions } from "../../utils/sortTasks";
 import { useEffect, useState } from "react";
+import { showMessage } from "../../adapters/showMessage";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
 
 
 export function History() {
     const {state, dispatch} = useTaskContext();
+    const [confirmClearHistory, setConfirmClearHistory] = useState(false);
     const hasTasks = state.tasks.length > 0;
     const [sortTasksOptions, setSortTaskOptions] = useState <SortTasksOptions> (() => {
         return {
@@ -33,6 +35,12 @@ export function History() {
             }),
         }));
     }, [state.tasks])
+
+    useEffect(() => {
+        if(!confirmClearHistory) return;
+        setConfirmClearHistory(false);
+        dispatch({ type: TaskActionTypes.RESET_STATE })
+    }, [confirmClearHistory, dispatch])
     
     function handleSortTasks({field} : Pick<SortTasksOptions, 'field'>) {
         const newDirection = sortTasksOptions.direction === 'desc' ? "asc" : 'desc'
@@ -49,10 +57,12 @@ export function History() {
     }
 
     function hadleResetHistory() {
-        if(!confirm('Tem certeza que deseja limpar ?')) return;
-
-        dispatch({ type: TaskActionTypes.RESET_STATE })
+        showMessage.dismiss();
+        showMessage.confirm('Tem certeza que deseja limpar?', confirmation => {
+            setConfirmClearHistory(confirmation);
+        });
     }
+
 
     return (
         <MainTemplate>
