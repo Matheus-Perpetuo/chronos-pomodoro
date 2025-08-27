@@ -17,6 +17,7 @@ export function History() {
     const {state, dispatch} = useTaskContext();
     const [confirmClearHistory, setConfirmClearHistory] = useState(false);
     const hasTasks = state.tasks.length > 0;
+
     const [sortTasksOptions, setSortTaskOptions] = useState <SortTasksOptions> (() => {
         return {
             tasks: sortTasks({ tasks: state.tasks }),
@@ -38,9 +39,17 @@ export function History() {
 
     useEffect(() => {
         if(!confirmClearHistory) return;
+
         setConfirmClearHistory(false);
+
         dispatch({ type: TaskActionTypes.RESET_STATE })
     }, [confirmClearHistory, dispatch])
+
+    useEffect(() => {
+        return () => {
+            showMessage.dismiss();
+        };
+    }, []);
     
     function handleSortTasks({field} : Pick<SortTasksOptions, 'field'>) {
         const newDirection = sortTasksOptions.direction === 'desc' ? "asc" : 'desc'
@@ -60,6 +69,7 @@ export function History() {
         showMessage.dismiss();
         showMessage.confirm('Tem certeza que deseja limpar?', confirmation => {
             setConfirmClearHistory(confirmation);
+
         });
     }
 
