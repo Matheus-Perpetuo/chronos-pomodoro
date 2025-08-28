@@ -53,7 +53,7 @@ action: TaskActionModel
             };
         }
         case TaskActionTypes.RESET_STATE: {
-            return {...initialTasksState};
+            return { ...initialTasksState };
         }
         case TaskActionTypes.COUNT_DOWN: {
             return {
@@ -62,7 +62,10 @@ action: TaskActionModel
                 formattedSecondsRemaining: formatSecondsToMinutes(
                     action.payload.secondsRemaining,
                 ),
-            }
+            };
+        }
+        case TaskActionTypes.CHANGE_SETTINGS: {
+            return {...state, config: { ...action.payload } };
         }
     }
 // Sempre deve retonar o estado

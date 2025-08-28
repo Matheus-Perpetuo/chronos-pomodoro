@@ -5,13 +5,15 @@
 // type <- o tipo da ação, geralmente uma string (pode ser enum, constante, etc)
 // payload <- os dados extras enviados junto com a action, se necessário para atualizar o estado
 import type { TaskModel } from "../../models/TaskModel"
+import type { TaskStateModel } from "../../models/TaskStateModel";
 
 export enum TaskActionTypes {
     START_TASK = 'START_TASK', 
     INTERRUPT_TASK = 'INTERRUPT_TASK',
     RESET_STATE = 'RESET_STATE',
     COUNT_DOWN = 'COUNT_DOWN',
-    COMPLETE_TASK = 'COMPLETE_TASK'
+    COMPLETE_TASK = 'COMPLETE_TASK',
+    CHANGE_SETTINGS = 'CHANGE_SETTINGS'
 }
 
 export type TaskActionsWithPayload = {
@@ -20,6 +22,9 @@ export type TaskActionsWithPayload = {
 }|{
     type: TaskActionTypes.COUNT_DOWN;
     payload: { secondsRemaining: number };
+}|{
+    type: TaskActionTypes.CHANGE_SETTINGS;
+    payload: TaskStateModel['config'];
 };
 
 export type TaskActionsWithoutPayload =
