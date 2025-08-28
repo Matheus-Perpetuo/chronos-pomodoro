@@ -33,19 +33,19 @@
   --gray-900: #0a0f1a; /* Fundo principal do site */
 
   /* 🌿 Cores Primárias (cores fixas - NÃO mudam com o tema) */
-  --primary-light: #4de7b7; /* Usado para realces suaves */
-  --primary: #0da170; /* Cor principal do projeto */
-  --primary-dark: #065f46; /* Usado em hovers e elementos ativos */
+  --primary-light: #3866d9; /* Usado para realces suaves */
+  --primary: #0d47da; /* Cor principal do projeto */
+  --primary-dark: #4663ac; /* Usado em hovers e elementos ativos */
 
   /* 🔗 Links */
-  --link-color: #10b981; /* Cor padrão dos links */
-  --link-hover: #0b8a60; /* Cor dos links ao passar o mouse */
+  --link-color: #0d14dabf; /* Cor padrão dos links */
+  --link-hover: #3c6be4; /* Cor dos links ao passar o mouse */
 
   /* 🚦 Alertas (cores fixas, usadas para feedbacks visuais) */
-  --success: #22c55e; /* Indica sucesso (verde) */
+  --success: #0d47da; /* Indica sucesso (verde) */
   --warning: #eab308; /* Indica alerta (amarelo) */
   --error: #991b1b; /* Indica erro (vermelho) */
-  --info: #0ea5e9; /* Indica informação (azul) */
+  --info: #22c55e; /* Indica informação (azul) */
 
   /* 🎨 Texto sobre fundos coloridos (para garantir contraste) */
   --text-over-primary: #0a0f1a; /* Texto sobre fundo primário */
@@ -95,8 +95,8 @@
   --text-muted: #272f43; /* Texto menos importante */
 
   /* 🔗 Links no modo claro */
-  --link-color: #0b8a60;
-  --link-hover: #065f46;
+  --link-color: #5573bc;
+  --link-hover: #5e85e9;
 
   /* 🔔 Toastify no modo claro */
   --toastify-text-color-light: #e6e9f0;

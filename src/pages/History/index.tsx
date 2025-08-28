@@ -82,7 +82,7 @@ export function History() {
         <MainTemplate>
             <Container>
                 <Heading>
-                   <span>History</span> 
+                   <span>Histórico</span> 
                    {hasTasks && (
                    <span className={styles.buttonContainer}>
                     <DefaultButton icon={<TrashIcon />} color="red"
@@ -142,7 +142,7 @@ export function History() {
                 )}
                 {!hasTasks && (
                     <p style={{ textAlign: 'center', fontWeight: 'bold'}}>
-                         Ainda não existem tarefas criadas.
+                         Ainda não existem tarefas criadas
                      </p>
                 )}
             </Container>

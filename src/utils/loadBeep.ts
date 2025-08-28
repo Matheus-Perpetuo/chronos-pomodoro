@@ -1,8 +1,8 @@
-import gravitationalBeep from '../assets/audios/gravitational_beep.mp3'
+import soundpokemon from '../assets/audios/soundpokemon.mp3'
 
 export function loadBeep() {
-    const audios = new Audio(gravitationalBeep)
-    audios.load();
+    const audios = new Audio(soundpokemon)
+    audios.load()
 
     return () => {
         audios.currentTime = 0;
