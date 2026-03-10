@@ -68,6 +68,5 @@ action: TaskActionModel
             return {...state, config: { ...action.payload } };
         }
     }
-// Sempre deve retonar o estado
 return state
 }
