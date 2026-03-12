@@ -24,12 +24,14 @@
 }
 
 .red {
-    background: var(--error);
+    background: #c85048;
     color: var(--text-over-error);
 
 }
 
 .green {
-    background: var(--primary);
+    background: #70b8f0;
     color: var(--text-over-primary);
 }
+
+
