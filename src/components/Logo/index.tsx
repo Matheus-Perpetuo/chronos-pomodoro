@@ -9,4 +9,5 @@ export function Logo() {
             <span>Pokédoro</span>
         </RouterLink>
     </div>
+    
 }
