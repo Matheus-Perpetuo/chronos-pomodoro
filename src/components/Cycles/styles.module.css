@@ -20,13 +20,13 @@
 }
 
 .workTime {
-    background: var(--warning);
+    background: #ee1515;
 }
 
 .shortBreakTime {
-    background: var(--primary);
+    background: #a8b8c8;
 }
 
 .longBreakTime {
-    background: var(--info);
+    background: #70b8f0;
 }

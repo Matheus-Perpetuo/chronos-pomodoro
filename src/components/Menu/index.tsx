@@ -22,7 +22,7 @@ export function Menu() {
     function handleThemeChange(
         event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
     ){
-        event.preventDefault(); //Nao segue o link
+        event.preventDefault(); 
 
         setTheme(prevTheme => {
             const nextTheme = prevTheme === 'dark' ? 'light' : 'dark'
@@ -33,7 +33,7 @@ export function Menu() {
     useEffect(() => {
        document.documentElement.setAttribute('data-theme', theme)
        localStorage.setItem('theme', theme);
-    }, [theme]); // Executa apenas quando valor de theme muda
+    }, [theme]); 
     
 
     return <nav className={styles.menu}>

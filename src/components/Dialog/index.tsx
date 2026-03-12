@@ -1,7 +1,6 @@
 import type { ToastContentProps } from 'react-toastify';
 import { DefaultButton } from '../DefaultButton';
 import { ThumbsDownIcon, ThumbsUpIcon } from 'lucide-react';
-
 import styles from './styles.module.css';
 
 export function Dialog({ closeToast, data }: ToastContentProps<string>) {
@@ -14,6 +13,7 @@ export function Dialog({ closeToast, data }: ToastContentProps<string>) {
           <DefaultButton
             onClick={() => closeToast(true)}
             icon={<ThumbsUpIcon />}
+            color='green'
             aria-label='Confirmar ação e fechar'
             title='Confirmar ação e fechar'
           />

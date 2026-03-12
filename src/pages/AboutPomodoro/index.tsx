@@ -7,7 +7,7 @@ import { MainTemplate } from "../../templates/MainTemplate";
 
 export function AboutPomodoro() {
   useEffect(() => {
-    document.title = 'Entenda a Técinica Pomodoro - Chronos Pomodoro' 
+    document.title = 'Entenda a Técinica Pomodoro - Pokédoro'; 
   }, [])
   
     return (
@@ -42,7 +42,7 @@ export function AboutPomodoro() {
           </ul>
 
           <h2>
-            Mas no <strong>Chronos Pomodoro</strong> tem um diferencial 🚀
+            Mas no <strong>Pokédoro</strong> tem um diferencial 🚀
           </h2>
 
           <p>
@@ -86,9 +86,9 @@ export function AboutPomodoro() {
             representando os ciclos:
           </p>
           <ul>
-            <li>🟡 Amarelo: Ciclo de trabalho (foco).</li>
-            <li>🟢 Verde: Descanso curto.</li>
-            <li>🔵 Azul: Descanso longo (aparece a cada 8 ciclos).</li>
+            <li><span style={{ color: '#ee1515', fontWeight: 'bold' }}> Vermelho </span>: Ciclo de trabalho (foco).</li>
+            <li><span style={{ color: '#a8b8c8', fontWeight: 'bold' }}> Branco </span>: Descanso curto.</li>
+            <li><span style={{ color: '#70b8f0', fontWeight: 'bold' }}> Azul </span>: Descanso longo (aparece a cada 8 ciclos).</li>
           </ul>
 
           <p>

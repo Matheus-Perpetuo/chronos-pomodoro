@@ -58,7 +58,7 @@ import type { TaskStateModel } from "../../models/TaskStateModel";
          worker.terminate();
       }
 
-      document.title = `${state.formattedSecondsRemaining} - Chronos Pomodoro`;
+      document.title = `${state.formattedSecondsRemaining} - Pokédoro`;
 
       worker.postMessage(state);
    }, [worker, state]);
