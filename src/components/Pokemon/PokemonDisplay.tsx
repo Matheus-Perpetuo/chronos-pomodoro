@@ -11,7 +11,7 @@ export function PokemonDisplay() {
         <span className="pokemon-level">LV {pokemon.level}</span>
       </div>
 
-      <div className="pokemon-body">
+      <div className="pokemon-sprite-container">
         <img
           className="pokemon-sprite"
           src={pokemon.sprite}
