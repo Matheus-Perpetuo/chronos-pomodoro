@@ -1,20 +1,24 @@
 import { usePokemon } from "../../contexts/PokemonContext/usePokemon";
-import './pokemon.css'
+import "./pokemon.css";
 
 export function PokemonDisplay() {
-    const { pokemon, } = usePokemon();
+  const { pokemon } = usePokemon();
 
-    return (
-        <div className="pokemon-container">
-            <h2 className="pokemon-name">{pokemon.name}</h2>
+  return (
+    <div className="pokemon-card">
+      <div className="pokemon-header">
+        <span className="pokemon-name">{pokemon.name}</span>
+        <span className="pokemon-level">LV {pokemon.level}</span>
+      </div>
 
+      <div className="pokemon-body">
         <img
-        className="pokemon-sprite"
-        src={pokemon.sprite}
-        alt={pokemon.name}
-         />
+          className="pokemon-sprite"
+          src={pokemon.sprite}
+          alt={pokemon.name}
+        />
+      </div>
 
-        <p className="pokemon-level">Level: {pokemon.level}</p>
-        </div>
-    );
+    </div>
+  );
 }

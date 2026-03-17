@@ -40,7 +40,7 @@ import { usePokemon } from "../PokemonContext/usePokemon";
          playBeepRef.current();
          playBeepRef.current = null;
          }
-         gainXP(3200); // xp por pomodoro 
+         gainXP(443); // xp por pomodoro 
          dispatch({
          type: TaskActionTypes.COMPLETE_TASK
       });
