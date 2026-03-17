@@ -14,7 +14,7 @@ export function Home() {
 
     return (
         <MainTemplate>
-            <><PokemonDisplay /></>
+            <PokemonDisplay/>
             <Container>
                 <CountDown />
             </Container>
