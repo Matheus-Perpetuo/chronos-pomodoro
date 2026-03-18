@@ -4,4 +4,6 @@ export type PokemonModel = {
     xp: number;
     xpToNextLevel: number;
     sprite: string;
+    spriteScale?: number;
+    
 }

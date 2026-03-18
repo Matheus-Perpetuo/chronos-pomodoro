@@ -16,6 +16,7 @@ export function PokemonDisplay() {
           className="pokemon-sprite"
           src={pokemon.sprite}
           alt={pokemon.name}
+          style={{ transform: `scale(${pokemon.spriteScale || 1})` }}
         />
       </div>
 

@@ -6,6 +6,8 @@ export function addPokemonXP(pokemon: PokemonModel, amount: number): PokemonMode
     let newLevel = pokemon.level;
     let newName = pokemon.name;
     let newSprite = pokemon.sprite;
+    let newSpriteScale = pokemon.spriteScale;
+
 
     while (newXP >= 100) {
         newXP -= 100;
@@ -16,10 +18,12 @@ export function addPokemonXP(pokemon: PokemonModel, amount: number): PokemonMode
     if (newLevel >= 16 && pokemon.name === "bulbasaur") {
         newName = "ivysaur";
         newSprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/2.gif";
+        newSpriteScale = 1.5;
     }
     if (newLevel >= 32 && pokemon.name === "ivysaur") {
         newName = "venusaur";
         newSprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif";
+        newSpriteScale = 1.6;
     }
 
     return {
@@ -28,5 +32,6 @@ export function addPokemonXP(pokemon: PokemonModel, amount: number): PokemonMode
         level: newLevel,
         name: newName,
         sprite: newSprite,
+        spriteScale: newSpriteScale,
     }
 }
