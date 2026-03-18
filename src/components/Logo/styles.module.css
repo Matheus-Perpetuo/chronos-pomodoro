@@ -4,6 +4,9 @@
     justify-content: center;
     gap: 2.4rem;
     padding-top: 3.2rem;
+    font-family: 'Press Start 2P' cursive;
+    text-shadow: 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000;
+    
 }
 
 .logoLink {
@@ -27,8 +30,3 @@
     width: 6.4rem;
     height: 6.4rem
     ;}
-
-.logo img {
-  width: 150px;
-  height: 150px;
-}

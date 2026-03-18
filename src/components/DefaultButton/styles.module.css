@@ -1,37 +1,53 @@
 .button {
-    border: none;
-    background: var(--primary);
-    color: var(--text-over-primary);
+    font-family: 'Press Start 2P', cursive;
+
+    border: 3px solid #222;
+    background: #f0f0f0;
+    color: #222;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     min-width: 24rem;
-    padding: 0.8rem;
-    border-radius: 0.8rem;
+    padding: 1rem;
+
     margin: 4.8rem 0;
-    cursor: pointer ;
-    transition: all 0.1s ease-in-out;
+
+    cursor: pointer;
+
+    box-shadow: 4px 4px 0px #222;
+
+    transition: all 0.1s ease;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    border-radius: 0;
+    gap: 1rem;
 }
 
 .button svg {
-    width: 3.2rem;
-    height: 3.2rem;
-
+    width: 2.4rem;
+    height: 2.4rem;
 }
 
 .button:hover {
-    filter: brightness(80%);
+    background: #e6e6e6;
+}
+
+.button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
 }
 
 .red {
-    background: #c85048;
-    color: var(--text-over-error);
-
+    background: var(--primary);
+    color: #fff;
 }
 
 .green {
-    background: #70b8f0;
-    color: var(--text-over-primary);
+    background: var(--success);
+    color: #fff;
 }
-
 

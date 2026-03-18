@@ -6,12 +6,14 @@ import { TimerWorkerManager } from "../../workes/TimerWorkerManager";
 import { TaskActionTypes } from "./taskActions";
 import { loadBeep } from "../../utils/loadBeep";
 import type { TaskStateModel } from "../../models/TaskStateModel";
+import { usePokemon } from "../PokemonContext/usePokemon";
 
  type TaskContextProviderProps = {
     children: React.ReactNode;
  };
 
  export function TaskContextProvider({children}: TaskContextProviderProps) {
+   const { gainXP } = usePokemon();
     const [state, dispatch] = useReducer(taskReducer, initialTasksState, () => {
       const storageState = localStorage.getItem('state');
 
@@ -38,6 +40,7 @@ import type { TaskStateModel } from "../../models/TaskStateModel";
          playBeepRef.current();
          playBeepRef.current = null;
          }
+         gainXP(443); // xp por ciclo 
          dispatch({
          type: TaskActionTypes.COMPLETE_TASK
       });
