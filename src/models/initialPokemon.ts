@@ -1,7 +1,7 @@
 import type { PokemonModel } from "./PokemonModel";
 
 export const initialPokemon: PokemonModel = {
-    name: 'bulbasaur',
+    name: "bulbasaur",
     level: 1,
     xp: 0,
     xpToNextLevel: 100,

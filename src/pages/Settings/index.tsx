@@ -4,10 +4,13 @@ import { DefaultInput } from "../../components/DefaultInput";
 import { Heading } from "../../components/Heading";
 import { MainTemplate } from "../../templates/MainTemplate";
 import { DefaultButton } from "../../components/DefaultButton";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { showMessage } from "../../adapters/showMessage";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
+import { PokemonContext } from "../../contexts/PokemonContext/PokemonContext";
+import { useNavigate } from "react-router";
+
 
 
 export function Settings() {
@@ -15,10 +18,17 @@ export function Settings() {
     const workTimeInput = useRef<HTMLInputElement>(null);
     const shortBreakTimeInput = useRef<HTMLInputElement>(null);
     const longBreakTimeInput = useRef<HTMLInputElement>(null);
+    const { resetPokemon } = useContext(PokemonContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.title = 'Configurações - Pokédoro';
     }, []);
+
+    function handleNewGame() {
+        resetPokemon();
+        navigate("/choose-pokemon");
+    }
 
     function handleSaveSettings(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -107,6 +117,10 @@ export function Settings() {
                 <DefaultButton icon={<SaveIcon />} 
                     aria-label="Salvar configurações" 
                     title="Salvar configurações"/>
+                </div>
+                <div>
+                    <h1>Reset Pokemon</h1>
+                    <button onClick={handleNewGame}>Novo Jogo</button>
                 </div>
                 </form>
             </Container>
