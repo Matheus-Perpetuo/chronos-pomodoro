@@ -86,9 +86,9 @@ export function AboutPomodoro() {
             representando os ciclos:
           </p>
           <ul>
-            <li><span style={{ color: '#ee1515', fontWeight: 'bold' }}> Vermelho </span>: Ciclo de trabalho (foco).</li>
-            <li><span style={{ color: '#a8b8c8', fontWeight: 'bold' }}> Branco </span>: Descanso curto.</li>
-            <li><span style={{ color: '#70b8f0', fontWeight: 'bold' }}> Azul </span>: Descanso longo (aparece a cada 8 ciclos).</li>
+            <li><span style={{ color: '#FF9442', fontWeight: 'bold' }}> Red </span>: Ciclo de trabalho (foco).</li>
+            <li><span style={{ color: '#84EFC6', fontWeight: 'bold' }}> Green </span>: Descanso curto.</li>
+            <li><span style={{ color: '#68adce', fontWeight: 'bold' }}> Blue </span>: Descanso longo (aparece a cada 8 ciclos).</li>
           </ul>
 
           <p>
@@ -105,7 +105,7 @@ export function AboutPomodoro() {
             do tempo.
           </p>
 
-          <h2>Por que usar o Chronos Pomodoro?</h2>
+          <h2>Por que usar o Pokédoro?</h2>
           <ul>
             <li>✅ Organize seu foco com clareza.</li>
             <li>✅ Trabalhe e descanse na medida certa.</li>

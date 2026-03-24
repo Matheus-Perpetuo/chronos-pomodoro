@@ -35,7 +35,6 @@ export function Menu() {
        localStorage.setItem('theme', theme);
     }, [theme]); 
     
-
     return <nav className={styles.menu}>
         <RouterLink className= {styles.menuLink}  href="/" aria-label='Ir para a Home' title='Ir para a Home'>
             <HouseIcon/>
