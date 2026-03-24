@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import styles from'./styles.module.css'
-import { HistoryIcon, HouseIcon, KeyIcon, MoonIcon, SettingsIcon, SunIcon } from 'lucide-react'
+import { HistoryIcon, HouseIcon, MoonIcon, SettingsIcon, SunIcon } from 'lucide-react'
 import { RouterLink } from '../RouterLink';
 
 type AvailableThemes = 'dark' | 'light'
