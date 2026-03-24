@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PokemonContext } from "./PokemonContext";
 import { initialPokemon } from "../../models/initialPokemon";
 import type { PokemonModel } from "../../models/PokemonModel";
-import { addPokemonXP } from "../../utils/pokemonSystem";
+import { addPokemonXP } from "../../utils/pokemon/pokemonSystem";
 import { useEffect } from "react";
 
 

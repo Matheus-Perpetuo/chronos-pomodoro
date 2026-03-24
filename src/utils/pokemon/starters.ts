@@ -7,8 +7,8 @@ export const starters: PokemonModel[] = [
     xp: 0,
     xpToNextLevel: 100,
     sprite:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/1.gif",
-    spriteScale: 2.5,
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif",
+    spriteScale: 1.8,
   },
   {
     name: "charmander",
@@ -16,8 +16,8 @@ export const starters: PokemonModel[] = [
     xp: 0,
     xpToNextLevel: 100,
     sprite:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/4.gif",
-    spriteScale: 2.5,
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif",
+    spriteScale: 1.8,
   },
   {
     name: "squirtle",
@@ -25,7 +25,7 @@ export const starters: PokemonModel[] = [
     xp: 0,
     xpToNextLevel: 100,
     sprite:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/7.gif",
-    spriteScale: 2.5,
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif",
+    spriteScale: 1.8,
   },
 ];

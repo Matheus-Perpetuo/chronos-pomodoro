@@ -10,6 +10,8 @@ import { showMessage } from "../../adapters/showMessage";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
 import { PokemonContext } from "../../contexts/PokemonContext/PokemonContext";
 import { useNavigate } from "react-router";
+import { toast } from 'react-toastify';
+import { Dialog } from "../../components/Dialog";
 
 
 
@@ -29,6 +31,25 @@ export function Settings() {
         resetPokemon();
         navigate("/choose-pokemon");
     }
+
+    function handleConfirmReset() {
+  toast(
+    (props) => <Dialog {...props} />,
+    {
+      data: "Tem certeza que deseja resetar seu Pokémon?",
+      closeOnClick: false,
+      autoClose: false,
+      draggable: false,
+      closeButton: false,
+      onClose: (result) => {
+        if (result === true) {
+          handleNewGame();
+            showMessage.success('Pokémon resetado com sucesso!');
+        }
+      },
+    }
+  );
+}
 
     function handleSaveSettings(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -93,8 +114,7 @@ export function Settings() {
                 ref={workTimeInput}
                 defaultValue={state.config.workTime}
                 type="number"
-                />
-                
+                />  
                 </div>
 
                 <div className="formRow">
@@ -118,11 +138,29 @@ export function Settings() {
                     aria-label="Salvar configurações" 
                     title="Salvar configurações"/>
                 </div>
-                <div>
-                    <h1>Reset Pokemon</h1>
-                    <button onClick={handleNewGame}>Novo Jogo</button>
-                </div>
                 </form>
+                </Container>  
+
+                <Container>             
+                <div className="formRow" >
+                    <h1>Trocar Pokémon</h1>
+                <p style={{textAlign: "center"}}>
+                O pokémon será resetado e seu progresso perdido
+                </p>
+                <DefaultButton 
+                    icon={
+                    <img 
+                     src="/logo-pokebola.png"
+                     alt="Pokebola"
+                     className="button-icon"
+                     style={{width: "2.4rem", height: "2.4rem", objectFit: "contain"}}
+                    />
+                    }
+                    aria-label="Resetar Pokémon" 
+                    title="Resetar Pokémon"
+                    onClick={handleConfirmReset}
+                    />
+                </div>
             </Container>
         </MainTemplate>
     );

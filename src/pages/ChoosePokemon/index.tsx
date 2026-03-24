@@ -2,11 +2,12 @@ import type { PokemonModel } from "../../models/PokemonModel";
 import { starters } from "../../utils/pokemon/starters";
 import { useContext } from "react";
 import { PokemonContext } from "../../contexts/PokemonContext/PokemonContext";
-import { MainTemplate } from "../../templates/MainTemplate";
-import { PokemonDisplay } from "../../components/Pokemon/PokemonDisplay";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
 import { initialPokemon } from "../../models/initialPokemon";
+import { SelectPokemonCard } from "../../components/Pokemon/SelectPokemonCard";
+import "./styles.css";
+import { Container } from "../../components/Container"; 
 
 
 export function ChoosePokemon() {
@@ -25,29 +26,28 @@ useEffect(() => {
 }, [pokemon, navigate]);
 
   return (
-    <MainTemplate>
-      <PokemonDisplay/>
+    <Container>
     <div>
-      <h1>Escolha seu Pokémon</h1>
+      <h1 className="title">Pokédoro</h1>
+      <h2 className="sub-title">Escolha Seu Pokémon Inicial</h2>
 
-      <div>
+      <div className="pokemon-grid">
         {starters.map((pokemon) => (
-          <div 
+          <SelectPokemonCard
             key={pokemon.name}
-            onClick={() => handleSelectPokemon(pokemon)}
-            >
-            <h2>{pokemon.name}</h2>
-
-            <img
-              src={pokemon.sprite}
-              alt={pokemon.name}
-              style={{ transform: `scale(${pokemon.spriteScale})` }}
-            />
-          </div>
-          
-        ))}
-      </div>
+            pokemon={pokemon}
+            onSelect={handleSelectPokemon}
+      />
+    ))}
+    
     </div>
-  </MainTemplate>
+    <Container>
+        <footer className= "footer">
+         Pokédoro &copy; {new Date().getFullYear()}
+        </footer>
+    </Container>
+  </div>
+  </Container>
+  
   );
 }
